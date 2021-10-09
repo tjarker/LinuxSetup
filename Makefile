@@ -82,7 +82,7 @@ vivado:
 		dpkg-dev:i386 \
 		libtinfo5 libncurses5
 	# take ownership of the install directory
-	sudo chown -R $$USER $(VIVADO_DIR)
+	#sudo chown -R $$USER $(VIVADO_DIR)
 	# add user to dialout group to allow access to usb devices
 	sudo adduser $$USER dialout
 	# install vivado cable drivers
@@ -97,7 +97,7 @@ vivado:
 Type=Application\n\
 Icon=$(VIVADO_DIR)/doc/images/vivado_logo.ico\n\
 Name=Vivado\n\
-Exec=$(VIVADO_DIR)/bin/vivado\n\
+Exec=bash -c \"mkdir -p $$HOME/.vivado && cd $$HOME/.vivado && $(VIVADO_DIR)/bin/vivado && rm -r $$HOME/.vivado && rm $$HOME/vivado_pid*\"\n\
 Categories=Development;\n\
 " | sudo tee vivado.desktop
 
