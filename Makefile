@@ -1,6 +1,7 @@
 SHELL := /bin/bash
 
-
+none:
+	@echo 'Select one of the setup make targets'
 
 
 # ---------------------------------------------------------------------------------------------------------------
@@ -87,7 +88,7 @@ vivado:
 	# install vivado cable drivers
 	cd $(VIVADO_DIR)/data/xicom/cable_drivers/lin64/install_script/install_drivers/ && sudo ./install_drivers
 	# add vivado bin directory to path
-	grep Vivado $$HOME/.profile && echo "Vivado is already added to path" ||\
+	grep Vivado $$HOME/.profile && @echo "Vivado is already added to path" ||\
 		echo -e 'export PATH="$(VIVADO_DIR)/bin/:$$PATH"' >> $$HOME/.profile
 	# create a shortcut
 	cd /usr/share/applications/ && sudo touch vivado.desktop && echo -e "\
@@ -143,6 +144,8 @@ onedrive:
 onedrive_monitor:
 	journalctl --user-unit onedrive -f
 
+onedrive_sync:
+	onedrive --synchronize
 
 
 
