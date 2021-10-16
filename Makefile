@@ -10,7 +10,7 @@ none:
 addUpgradeAlias:
 	echo "alias upgrader=\" \
 	sudo gnome-terminal -- sh -c \\\"sudo apt update && sudo apt -y full-upgrade\\\" && \
-	flatpak update\"" >> $$HOME/.bash_aliases
+	flatpak update -y\"" >> $$HOME/.bash_aliases
 
 
 
