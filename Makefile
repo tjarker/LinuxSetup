@@ -73,7 +73,7 @@ chisel:
 	source "$$HOME/.sdkman/bin/sdkman-init.sh" && \
 	sdk install java 8.0.282.hs-adpt && \
 	sdk install sbt 
-	sudo apt install -y flatpak
+	sudo apt install -y flatpak gtkwave
 	flatpak install com.jetbrains.IntelliJ-IDEA-Community -y
 	echo -e '\n\nThe scala plugin still needs to be installed inside Intellij!\n\n'
 
