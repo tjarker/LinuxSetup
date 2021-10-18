@@ -89,7 +89,7 @@ chisel:
 # ---------------------------------------------------------------------------------------------------------------
 # Xilinx Vivado
 # ---------------------------------------------------------------------------------------------------------------
-VIVADO_DIR := /opt/ext/Xilinx/Vivado/2020.2
+VIVADO_DIR := /opt/Xilinx/Vivado/2020.2
 
 vivado:
 	# install additional dependencies
@@ -175,7 +175,7 @@ onedrive_sync:
 # ---------------------------------------------------------------------------------------------------------------
 # Matlab
 # ---------------------------------------------------------------------------------------------------------------
-MATLAB_DIR := /opt/matlab/2020A
+MATLAB_DIR := /opt/matlab/R2021b
 
 matlab:
 	# add matlab bin directory to path
@@ -188,6 +188,6 @@ matlab:
 Type=Application\n\
 Icon=/usr/share/icons/matlab.png\n\
 Name=Matlab\n\
-Exec=/opt/matlab/R2021a/bin/matlab -desktop -prefersoftwareopengl\n\
+Exec=$(MATLAB_DIR)/bin/matlab -desktop -prefersoftwareopengl\n\
 Categories=Development;\n\
-" | sudo tee vivado.desktop
+" | sudo tee matlab.desktop
